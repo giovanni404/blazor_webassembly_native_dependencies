@@ -1,0 +1,17 @@
+﻿@page "/"
+
+@using System.Runtime.InteropServices
+
+<h1>Native C Test</h1>
+
+<p>
+    foo1() + foo2() result: @foo1() + @foo2() = @(foo1() + foo2())
+</p>
+
+@code {
+    [DllImport("foo1")]
+    static extern int foo1();
+
+    [DllImport("foo2")]
+    static extern int foo2();
+}
